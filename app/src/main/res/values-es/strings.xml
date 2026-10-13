@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tracking_notification">Enviando ubicación</string>
+
+    <string name="status_not_configured">Configura el servidor en Ajustes</string>
+    <string name="status_tracking">Enviando ubicación</string>
+    <string name="status_paused_phone">En pausa · móvil cerca</string>
+    <string name="status_waiting">Esperando para empezar</string>
+    <string name="status_stopped">Detenido</string>
+    <string name="last_position">Última posición: %1$s</string>
+
+    <string name="start">Iniciar</string>
+    <string name="stop">Detener</string>
+    <string name="send_now">Enviar posición ahora</string>
+    <string name="position_sent">Posición enviada</string>
+    <string name="position_failed">No se pudo enviar la posición</string>
+    <string name="settings">Ajustes</string>
+    <string name="save">Guardar</string>
+    <string name="not_set">Sin configurar</string>
+
+    <string name="server_url">URL del servidor</string>
+    <string name="server_url_hint">http://servidor:5055</string>
+    <string name="device_id">Identificador</string>
+    <string name="device_id_hint">p. ej. 12345678</string>
+    <string name="pause_near_phone">Pausa con el móvil cerca</string>
+    <string name="pause_near_phone_summary">Solo envía cuando el móvil no está conectado por Bluetooth</string>
+    <string name="accuracy">Precisión</string>
+    <string name="accuracy_highest">Máxima</string>
+    <string name="accuracy_high">Alta</string>
+    <string name="accuracy_medium">Media</string>
+    <string name="accuracy_low">Baja</string>
+    <string name="distance">Distancia mínima</string>
+    <string name="interval">Intervalo</string>
+    <string name="interval_unused">sin uso</string>
+    <string name="off">No</string>
+</resources>

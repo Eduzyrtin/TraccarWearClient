@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tracker for Traccar</string>
+    <string name="tracking_notification">Sending location</string>
+
+    <string name="status_not_configured">Set up the server in Settings</string>
+    <string name="status_tracking">Sending location</string>
+    <string name="status_paused_phone">Paused · phone nearby</string>
+    <string name="status_waiting">Waiting to start</string>
+    <string name="status_stopped">Stopped</string>
+    <string name="last_position">Last position: %1$s</string>
+
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="send_now">Send position now</string>
+    <string name="position_sent">Position sent</string>
+    <string name="position_failed">Could not send the position</string>
+    <string name="settings">Settings</string>
+    <string name="save">Save</string>
+    <string name="not_set">Not set</string>
+
+    <string name="server_url">Server URL</string>
+    <string name="server_url_hint">http://server:5055</string>
+    <string name="device_id">Device identifier</string>
+    <string name="device_id_hint">e.g. 12345678</string>
+    <string name="pause_near_phone">Pause near phone</string>
+    <string name="pause_near_phone_summary">Only send when the phone is not connected via Bluetooth</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="accuracy_highest">Highest</string>
+    <string name="accuracy_high">High</string>
+    <string name="accuracy_medium">Medium</string>
+    <string name="accuracy_low">Low</string>
+    <string name="distance">Minimum distance</string>
+    <string name="interval">Interval</string>
+    <string name="interval_unused">not used</string>
+    <string name="off">Off</string>
+    <string name="meters">%1$d m</string>
+    <string name="seconds">%1$d s</string>
+    <string name="minutes">%1$d min</string>
+</resources>
