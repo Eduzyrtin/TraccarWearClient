@@ -80,7 +80,7 @@ private fun SettingButton(label: String, value: String, onClick: () -> Unit) {
         colors = ButtonDefaults.filledTonalButtonColors(),
         modifier = Modifier.fillMaxWidth(),
         label = { Text(label) },
-        secondaryLabel = { Text(value, maxLines = 2) },
+        secondaryLabel = { Text(value, maxLines = 3) },
     )
 }
 
