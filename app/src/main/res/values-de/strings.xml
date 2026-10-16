@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tracking_notification">Standort wird gesendet</string>
+
+    <string name="status_not_configured">Server in den Einstellungen einrichten</string>
+    <string name="status_tracking">Standort wird gesendet</string>
+    <string name="status_paused_phone">Pausiert · Handy in der Nähe</string>
+    <string name="status_waiting">Wartet auf den Start</string>
+    <string name="status_stopped">Gestoppt</string>
+    <string name="last_position">Letzte Position: %1$s</string>
+
+    <string name="start">Starten</string>
+    <string name="stop">Stoppen</string>
+    <string name="send_now">Position jetzt senden</string>
+    <string name="position_sent">Position gesendet</string>
+    <string name="position_failed">Position konnte nicht gesendet werden</string>
+    <string name="settings">Einstellungen</string>
+    <string name="save">Speichern</string>
+    <string name="clear">Löschen</string>
+    <string name="not_set">Nicht festgelegt</string>
+
+    <string name="server_url">Server-URL</string>
+    <string name="device_id">Gerätekennung</string>
+    <string name="device_id_hint">z. B. 12345678</string>
+    <string name="pause_near_phone">Pause in Handynähe</string>
+    <string name="pause_near_phone_summary">Nur senden, wenn das Handy nicht per Bluetooth verbunden ist</string>
+    <string name="accuracy">Genauigkeit</string>
+    <string name="stop_detection">Stillstandserkennung</string>
+    <string name="stop_detection_summary">Schaltet das GPS aus, solange du dich nicht bewegst. Spart viel Akku</string>
+    <string name="accuracy_highest">Höchste · hoher Akkuverbrauch</string>
+    <string name="accuracy_high">Hoch · mehr Akkuverbrauch</string>
+    <string name="accuracy_medium">Mittel · empfohlen</string>
+    <string name="accuracy_low">Niedrig · geringster Akkuverbrauch</string>
+    <string name="distance">Mindestabstand</string>
+    <string name="interval">Intervall</string>
+    <string name="interval_unused">nicht verwendet</string>
+    <string name="off">Aus</string>
+</resources>

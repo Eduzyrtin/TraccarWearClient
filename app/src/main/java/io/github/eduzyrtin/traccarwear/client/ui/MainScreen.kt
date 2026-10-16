@@ -2,6 +2,7 @@ package io.github.eduzyrtin.traccarwear.client.ui
 
 import android.Manifest
 import android.content.Context
+import android.os.Build
 import android.text.format.DateUtils
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -86,7 +87,7 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                     onClick = {
                         when {
                             settings.trackingWanted -> viewModel.setTracking(false)
-                            needsBluetoothPermission(context, settings) ->
+                            needsBluetoothPermission(context, settings) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ->
                                 bluetoothPermission.launch(Manifest.permission.BLUETOOTH_CONNECT)
                             else -> startTracking()
                         }
@@ -128,5 +129,8 @@ private fun statusText(settings: ClientSettings, state: TrackerState?): String =
     },
 )
 
+// Hasta Android 11 basta BLUETOOTH, que se concede al instalar; BLUETOOTH_CONNECT solo existe desde Android 12
 private fun needsBluetoothPermission(context: Context, settings: ClientSettings) =
-    settings.pauseNearPhone && !hasPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+    Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+        settings.pauseNearPhone &&
+        !hasPermission(context, Manifest.permission.BLUETOOTH_CONNECT)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tracking_notification">Kokapena bidaltzen</string>
+
+    <string name="status_not_configured">Konfiguratu zerbitzaria Ezarpenetan</string>
+    <string name="status_tracking">Kokapena bidaltzen</string>
+    <string name="status_paused_phone">Pausatuta · telefonoa gertu</string>
+    <string name="status_waiting">Hasteko zain</string>
+    <string name="status_stopped">Geldituta</string>
+    <string name="last_position">Azken posizioa: %1$s</string>
+
+    <string name="start">Hasi</string>
+    <string name="stop">Gelditu</string>
+    <string name="send_now">Bidali posizioa orain</string>
+    <string name="position_sent">Posizioa bidalita</string>
+    <string name="position_failed">Ezin izan da posizioa bidali</string>
+    <string name="settings">Ezarpenak</string>
+    <string name="save">Gorde</string>
+    <string name="clear">Garbitu</string>
+    <string name="not_set">Ezarri gabe</string>
+
+    <string name="server_url">Zerbitzariaren URLa</string>
+    <string name="device_id">Gailuaren identifikatzailea</string>
+    <string name="device_id_hint">adib. 12345678</string>
+    <string name="pause_near_phone">Pausa telefonoaren ondoan</string>
+    <string name="pause_near_phone_summary">Bidali telefonoa Bluetooth bidez konektatuta ez dagoenean soilik</string>
+    <string name="accuracy">Zehaztasuna</string>
+    <string name="stop_detection">Geldialdiaren detekzioa</string>
+    <string name="stop_detection_summary">GPSa itzaltzen du mugitzen ez zaudenean. Bateria asko aurrezten du</string>
+    <string name="accuracy_highest">Gehienezkoa · bateria asko erabiltzen du</string>
+    <string name="accuracy_high">Altua · bateria gehiago</string>
+    <string name="accuracy_medium">Ertaina · gomendatua</string>
+    <string name="accuracy_low">Baxua · bateria gutxiago</string>
+    <string name="distance">Gutxieneko distantzia</string>
+    <string name="interval">Tartea</string>
+    <string name="interval_unused">erabiltzen ez da</string>
+    <string name="off">Desaktibatuta</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tracking_notification">Enviant la ubicació</string>
+
+    <string name="status_not_configured">Configura el servidor a Configuració</string>
+    <string name="status_tracking">Enviant la ubicació</string>
+    <string name="status_paused_phone">En pausa · mòbil a prop</string>
+    <string name="status_waiting">Esperant per començar</string>
+    <string name="status_stopped">Aturat</string>
+    <string name="last_position">Última posició: %1$s</string>
+
+    <string name="start">Inicia</string>
+    <string name="stop">Atura</string>
+    <string name="send_now">Envia la posició ara</string>
+    <string name="position_sent">Posició enviada</string>
+    <string name="position_failed">No s\'ha pogut enviar la posició</string>
+    <string name="settings">Configuració</string>
+    <string name="save">Desa</string>
+    <string name="clear">Esborra</string>
+    <string name="not_set">Sense configurar</string>
+
+    <string name="server_url">URL del servidor</string>
+    <string name="device_id">Identificador del dispositiu</string>
+    <string name="device_id_hint">p. ex. 12345678</string>
+    <string name="pause_near_phone">Pausa prop del mòbil</string>
+    <string name="pause_near_phone_summary">Només envia quan el mòbil no està connectat per Bluetooth</string>
+    <string name="accuracy">Precisió</string>
+    <string name="stop_detection">Detecció d\'aturada</string>
+    <string name="stop_detection_summary">Apaga el GPS mentre no et mous. Estalvia molta bateria</string>
+    <string name="accuracy_highest">Màxima · molt consum de bateria</string>
+    <string name="accuracy_high">Alta · més bateria</string>
+    <string name="accuracy_medium">Mitjana · recomanada</string>
+    <string name="accuracy_low">Baixa · menys bateria</string>
+    <string name="distance">Distància mínima</string>
+    <string name="interval">Interval</string>
+    <string name="interval_unused">no s\'utilitza</string>
+    <string name="off">Desactivat</string>
+</resources>

@@ -9,6 +9,8 @@
         android:maxSdkVersion="30" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Android 12+ exige declarar la aproximada junto a la precisa (el SDK solo declara la precisa) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- Ubicación, servicio en primer plano, arranque, etc. los declara el SDK de Traccar -->
 
     <application

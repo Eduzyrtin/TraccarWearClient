@@ -22,6 +22,8 @@ data class ClientSettings(
     val accuracy: Accuracy = Accuracy.MEDIUM,
     val intervalSeconds: Int = 300,
     val distanceMeters: Int = 75,
+    // El SDK pausa el GPS cuando detecta que no te mueves (como la app oficial). Es lo que más batería ahorra.
+    val stopDetection: Boolean = true,
     val pauseNearPhone: Boolean = true,
     // Lo que quiere el usuario. El tracking real puede estar parado aunque esto sea true (móvil cerca).
     val trackingWanted: Boolean = false,
@@ -37,6 +39,7 @@ data class ClientSettings(
             accuracy = accuracy,
             distanceMeters = distanceMeters,
             intervalSeconds = intervalSeconds,
+            stopDetection = stopDetection,
         ),
         notification = NotificationConfig(text = notificationText),
     )
@@ -50,6 +53,7 @@ object SettingsStore {
     private val ACCURACY = stringPreferencesKey("accuracy")
     private val INTERVAL = intPreferencesKey("interval_seconds")
     private val DISTANCE = intPreferencesKey("distance_meters")
+    private val STOP_DETECTION = booleanPreferencesKey("stop_detection")
     private val PAUSE_NEAR_PHONE = booleanPreferencesKey("pause_near_phone")
     private val TRACKING_WANTED = booleanPreferencesKey("tracking_wanted")
     private val PAUSED_BY_PHONE = booleanPreferencesKey("paused_by_phone")
@@ -67,6 +71,7 @@ object SettingsStore {
             prefs[ACCURACY] = result.accuracy.name
             prefs[INTERVAL] = result.intervalSeconds
             prefs[DISTANCE] = result.distanceMeters
+            prefs[STOP_DETECTION] = result.stopDetection
             prefs[PAUSE_NEAR_PHONE] = result.pauseNearPhone
             prefs[TRACKING_WANTED] = result.trackingWanted
             prefs[PAUSED_BY_PHONE] = result.pausedByPhone
@@ -89,6 +94,7 @@ object SettingsStore {
         accuracy = this[ACCURACY]?.let { name -> Accuracy.entries.find { it.name == name } } ?: Accuracy.MEDIUM,
         intervalSeconds = this[INTERVAL] ?: 300,
         distanceMeters = this[DISTANCE] ?: 75,
+        stopDetection = this[STOP_DETECTION] ?: true,
         pauseNearPhone = this[PAUSE_NEAR_PHONE] ?: true,
         trackingWanted = this[TRACKING_WANTED] ?: false,
         pausedByPhone = this[PAUSED_BY_PHONE] ?: false,

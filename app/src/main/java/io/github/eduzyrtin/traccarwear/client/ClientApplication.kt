@@ -12,9 +12,23 @@ class ClientApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        GateWorker.schedulePeriodic(this)
         scope.launch {
             SettingsStore.ensureDeviceId(this@ClientApplication)
+            // Solo en debug (valores de test-defaults.properties); en release están vacíos.
+            // Se aplican únicamente si todavía no hay servidor configurado.
+            if (BuildConfig.TEST_SERVER.isNotEmpty()) {
+                SettingsStore.update(this@ClientApplication) {
+                    if (it.serverUrl.isBlank()) {
+                        it.copy(
+                            serverUrl = BuildConfig.TEST_SERVER,
+                            deviceId = BuildConfig.TEST_DEVICE_ID.ifEmpty { it.deviceId },
+                        )
+                    } else {
+                        it
+                    }
+                }
+            }
+            // Solo hace trabajo real si se estaba rastreando (ver TrackingGate); en reposo no carga el SDK
             TrackingGate.reconcile(this@ClientApplication)
         }
     }

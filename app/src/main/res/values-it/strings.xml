@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tracking_notification">Invio della posizione</string>
+
+    <string name="status_not_configured">Configura il server nelle Impostazioni</string>
+    <string name="status_tracking">Invio della posizione</string>
+    <string name="status_paused_phone">In pausa · telefono vicino</string>
+    <string name="status_waiting">In attesa di avvio</string>
+    <string name="status_stopped">Fermato</string>
+    <string name="last_position">Ultima posizione: %1$s</string>
+
+    <string name="start">Avvia</string>
+    <string name="stop">Ferma</string>
+    <string name="send_now">Invia la posizione ora</string>
+    <string name="position_sent">Posizione inviata</string>
+    <string name="position_failed">Impossibile inviare la posizione</string>
+    <string name="settings">Impostazioni</string>
+    <string name="save">Salva</string>
+    <string name="clear">Cancella</string>
+    <string name="not_set">Non impostato</string>
+
+    <string name="server_url">URL del server</string>
+    <string name="device_id">Identificatore del dispositivo</string>
+    <string name="device_id_hint">es. 12345678</string>
+    <string name="pause_near_phone">Pausa vicino al telefono</string>
+    <string name="pause_near_phone_summary">Invia solo quando il telefono non è connesso via Bluetooth</string>
+    <string name="accuracy">Precisione</string>
+    <string name="stop_detection">Rilevamento della sosta</string>
+    <string name="stop_detection_summary">Spegne il GPS quando non ti muovi. Risparmia molta batteria</string>
+    <string name="accuracy_highest">Massima · consumo elevato</string>
+    <string name="accuracy_high">Alta · più batteria</string>
+    <string name="accuracy_medium">Media · consigliata</string>
+    <string name="accuracy_low">Bassa · meno batteria</string>
+    <string name="distance">Distanza minima</string>
+    <string name="interval">Intervallo</string>
+    <string name="interval_unused">non usato</string>
+    <string name="off">Disattivato</string>
+</resources>

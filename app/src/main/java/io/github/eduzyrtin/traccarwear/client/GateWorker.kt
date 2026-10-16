@@ -30,6 +30,18 @@ class GateWorker(context: Context, params: WorkerParameters) : CoroutineWorker(c
             WorkManager.getInstance(context).enqueueUniqueWork(ONCE, ExistingWorkPolicy.REPLACE, request)
         }
 
+        // El trabajo periódico solo hace falta si se está rastreando Y la pausa con el móvil cerca está activa;
+        // en cualquier otro caso se cancela para que la app no se despierte sin motivo.
+        fun sync(context: Context, settings: ClientSettings) {
+            if (settings.trackingWanted && settings.pauseNearPhone) {
+                schedulePeriodic(context)
+            } else {
+                val manager = WorkManager.getInstance(context)
+                manager.cancelUniqueWork(PERIODIC)
+                manager.cancelUniqueWork(ONCE)
+            }
+        }
+
         // Red de seguridad por si se pierde algún aviso de Bluetooth o falta el permiso
         fun schedulePeriodic(context: Context) {
             val request = PeriodicWorkRequestBuilder<GateWorker>(15, TimeUnit.MINUTES).build()

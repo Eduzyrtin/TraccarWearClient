@@ -1,11 +1,13 @@
 package io.github.eduzyrtin.traccarwear.client
 
 import android.Manifest
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.os.PowerManager
 import android.provider.Settings
 import android.util.Log
+import androidx.core.content.edit
 import androidx.core.content.getSystemService
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -21,6 +23,10 @@ object TrackingGate {
 
     suspend fun reconcile(context: Context) = mutex.withLock {
         val settings = SettingsStore.read(context)
+        // La pausa por cercanía solo existe mientras se rastrea: si no, se cancela el trabajo periódico
+        GateWorker.sync(context, settings)
+        // Sin rastreo y sin SDK cargado no hay nada que parar: no se arranca el SDK (base de datos, red) solo para comprobarlo
+        if (!settings.trackingWanted && TrackerHolder.tracker.value == null) return@withLock
         val tracker = TrackerHolder.current(context) ?: return@withLock
         val phoneNearby = settings.pauseNearPhone && settings.trackingWanted && PhoneProximity.isNearby(context)
         val shouldRun = settings.trackingWanted && !phoneNearby
@@ -43,13 +49,15 @@ object TrackingGate {
 }
 
 /**
- * Sin la exención de optimización de batería, Android puede impedir que el GPS arranque
- * en segundo plano cuando el reloj se aleja del teléfono. Se pide una sola vez, si el reloj
- * tiene la pantalla de ajustes correspondiente.
+ * Android restringe arrancar un servicio en primer plano (el del GPS) desde segundo plano, que es lo que
+ * ocurre al alejarse del teléfono. Estar fuera de la optimización de batería es una de las exenciones
+ * que lo permiten, así que se pide una sola vez. Cuesta algo de batería en reposo (Doze menos estricto)
+ * y es el compromiso necesario para que la pausa por cercanía arranque sola.
  */
 object BatteryOptimization {
     private const val PREFS = "battery_optimization"
     private const val PROMPTED = "prompted"
+    private const val TAG = "BatteryOptimization"
 
     fun promptOnce(context: Context) {
         val power = context.getSystemService<PowerManager>() ?: return
@@ -57,9 +65,11 @@ object BatteryOptimization {
         val prefs = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         if (prefs.getBoolean(PROMPTED, false)) return
         val intent = Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
-        if (intent.resolveActivity(context.packageManager) != null) {
-            context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        try {
+            context.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Log.w(TAG, "Este reloj no tiene la pantalla de optimización de batería", e)
         }
-        prefs.edit().putBoolean(PROMPTED, true).apply()
+        prefs.edit { putBoolean(PROMPTED, true) }
     }
 }

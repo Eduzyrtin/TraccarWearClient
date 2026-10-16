@@ -1,7 +1,16 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
 }
+
+val testDefaults = Properties().apply {
+    val file = rootProject.file("test-defaults.properties")
+    if (file.exists()) file.inputStream().use { load(it) }
+}
+
+fun quoted(key: String) = "\"" + testDefaults.getProperty(key, "").replace("\\", "\\\\").replace("\"", "\\\"") + "\""
 
 android {
     namespace = "io.github.eduzyrtin.traccarwear.client"
@@ -16,7 +25,19 @@ android {
         versionName = "0.1.0"
     }
 
+    buildTypes {
+        debug {
+            buildConfigField("String", "TEST_SERVER", quoted("server"))
+            buildConfigField("String", "TEST_DEVICE_ID", quoted("deviceId"))
+        }
+        release {
+            buildConfigField("String", "TEST_SERVER", "\"\"")
+            buildConfigField("String", "TEST_DEVICE_ID", "\"\"")
+        }
+    }
+
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 

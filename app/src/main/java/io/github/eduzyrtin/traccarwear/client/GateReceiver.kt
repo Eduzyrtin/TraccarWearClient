@@ -9,27 +9,41 @@ import kotlinx.coroutines.launch
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
+/**
+ * Avisos de Bluetooth y de arranque. Las conexiones de cualquier dispositivo Bluetooth (auriculares, etc.)
+ * llegan aquí, así que lo primero es salir sin hacer nada si no se está rastreando con la pausa activada.
+ */
 class GateReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        when (intent.action) {
-            BluetoothDevice.ACTION_ACL_DISCONNECTED -> {
-                // Android solo permite arrancar el servicio de ubicación desde segundo plano justo después
-                // de este aviso, así que se intenta aquí mismo en cuanto Wear OS confirma que el móvil no
-                // está cerca. Si tarda más, lo vuelve a comprobar el worker (con la exención de batería).
-                val pending = goAsync()
-                (context.applicationContext as ClientApplication).scope.launch {
-                    try {
-                        startIfPhoneAway(context.applicationContext)
-                    } finally {
-                        pending.finish()
-                    }
-                }
+        val action = intent.action ?: return
+        val appContext = context.applicationContext
+        val pending = goAsync()
+        (appContext as ClientApplication).scope.launch {
+            try {
+                handle(appContext, action)
+            } finally {
+                pending.finish()
             }
+        }
+    }
+
+    private suspend fun handle(context: Context, action: String) {
+        val settings = SettingsStore.read(context)
+        if (!settings.trackingWanted) {
+            GateWorker.sync(context, settings)
+            return
+        }
+        when (action) {
+            // Al desconectarse el móvil se intenta arrancar enseguida, que es cuando Android lo permite con más
+            // probabilidad; si Wear OS tarda en confirmarlo, lo reintenta el trabajo de respaldo.
+            // Nota: no se ha verificado en un reloj real que el arranque desde segundo plano sea siempre
+            // posible; la exención de batería (ver BatteryOptimization) es lo que lo hace fiable.
+            BluetoothDevice.ACTION_ACL_DISCONNECTED -> if (settings.pauseNearPhone) startIfPhoneAway(context)
             // Al volver el móvil se para con un pequeño margen para no cortar por un rebote del Bluetooth
-            BluetoothDevice.ACTION_ACL_CONNECTED -> GateWorker.enqueue(context, NEAR_DELAY)
+            BluetoothDevice.ACTION_ACL_CONNECTED -> if (settings.pauseNearPhone) GateWorker.enqueue(context, NEAR_DELAY)
             Intent.ACTION_BOOT_COMPLETED, Intent.ACTION_MY_PACKAGE_REPLACED -> {
-                GateWorker.schedulePeriodic(context)
+                GateWorker.sync(context, settings)
                 GateWorker.enqueue(context, Duration.ZERO)
             }
         }

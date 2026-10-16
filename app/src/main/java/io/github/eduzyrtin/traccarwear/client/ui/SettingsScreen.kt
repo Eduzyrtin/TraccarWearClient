@@ -50,6 +50,15 @@ fun SettingsScreen(viewModel: ClientViewModel, onEditServer: () -> Unit, onEditD
                 )
             }
             item {
+                SwitchButton(
+                    checked = settings.stopDetection,
+                    onCheckedChange = { checked -> viewModel.updateSettings { it.copy(stopDetection = checked) } },
+                    modifier = Modifier.fillMaxWidth(),
+                    label = { Text(stringResource(R.string.stop_detection)) },
+                    secondaryLabel = { Text(stringResource(R.string.stop_detection_summary)) },
+                )
+            }
+            item {
                 SettingButton(stringResource(R.string.accuracy), stringResource(settings.accuracy.label())) {
                     viewModel.updateSettings { it.copy(accuracy = Accuracy.entries.next(it.accuracy)) }
                 }
