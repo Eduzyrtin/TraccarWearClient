@@ -1,1 +1,1 @@
-Tracker for Traccar
+Wear OS Client for Traccar

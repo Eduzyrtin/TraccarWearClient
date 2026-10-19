@@ -1,4 +1,4 @@
-Tracker for Traccar envia la ubicació del teu rellotge Wear OS al teu propi servidor Traccar. És una app independent: funciona al rellotge i no necessita res al mòbil.
+Wear OS Client for Traccar envia la ubicació del teu rellotge Wear OS al teu propi servidor Traccar. És una app independent: funciona al rellotge i no necessita res al mòbil.
 
 PER A QUI ÉS?
 Per a rellotges amb connexió pròpia a internet (LTE, 5G o similar) i un pla de dades actiu, que fan servir persones que de vegades surten sense el mòbil: una passejada, una cursa, una ruta en bici, amb el rellotge com a únic dispositiu a sobre.
@@ -36,4 +36,4 @@ La teva posició s'envia només al servidor Traccar que indiquis. Sense analíti
 LLIURE I DE CODI OBERT
 Publicada amb llicència GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
 
-Tracker for Traccar és un projecte independent i no està afiliat ni avalat per Traccar. "Traccar" és una marca dels seus respectius propietaris.
+Wear OS Client for Traccar és un projecte independent i no està afiliat ni avalat per Traccar. "Traccar" és una marca dels seus respectius propietaris.

@@ -1,4 +1,4 @@
-Tracker for Traccar envía la ubicación de tu reloj Wear OS a tu propio servidor Traccar. Es una app independiente: funciona en el reloj y no necesita nada en el móvil.
+Wear OS Client for Traccar envía la ubicación de tu reloj Wear OS a tu propio servidor Traccar. Es una app independiente: funciona en el reloj y no necesita nada en el móvil.
 
 ¿PARA QUIÉN ES?
 Para relojes con conexión propia a internet (LTE, 5G o similar) y un plan de datos activo, usados por personas que a veces salen sin el móvil: un paseo, una carrera, una ruta en bici, con el reloj como único dispositivo encima.
@@ -36,4 +36,4 @@ Tu posición se envía solo al servidor Traccar que tú indiques. Sin analítica
 LIBRE Y DE CÓDIGO ABIERTO
 Publicada bajo licencia GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
 
-Tracker for Traccar es un proyecto independiente y no está afiliado ni respaldado por Traccar. "Traccar" es una marca de sus respectivos propietarios.
+Wear OS Client for Traccar es un proyecto independiente y no está afiliado ni respaldado por Traccar. "Traccar" es una marca de sus respectivos propietarios.
