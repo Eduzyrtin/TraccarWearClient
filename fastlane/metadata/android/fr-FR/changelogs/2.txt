@@ -1,0 +1,1 @@
+Ajoute un avis clair avant de demander la position en arrière-plan, qui explique pourquoi la position de la montre est envoyée même lorsque l'appli est fermée ou l'écran éteint.

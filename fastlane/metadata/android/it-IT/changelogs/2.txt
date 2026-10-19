@@ -1,0 +1,1 @@
+Aggiunge un avviso chiaro prima di richiedere la posizione in background, che spiega perché la posizione dell'orologio viene inviata anche con l'app chiusa o lo schermo spento.

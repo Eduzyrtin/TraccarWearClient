@@ -1,0 +1,1 @@
+Adds a clear notice before asking for background location, explaining why the watch location is sent even when the app is closed or the screen is off.

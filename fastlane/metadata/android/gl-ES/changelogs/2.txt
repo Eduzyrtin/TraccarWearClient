@@ -1,0 +1,1 @@
+Engade un aviso claro antes de pedir a localización en segundo plano, que explica por que se envía a localización do reloxo coa app pechada ou a pantalla apagada.

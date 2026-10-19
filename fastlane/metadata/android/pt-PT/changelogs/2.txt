@@ -1,0 +1,1 @@
+Adiciona um aviso claro antes de pedir a localização em segundo plano, que explica porque é que a localização do relógio é enviada mesmo com a app fechada ou o ecrã desligado.

@@ -1,0 +1,1 @@
+Fügt vor der Abfrage des Standorts im Hintergrund einen klaren Hinweis hinzu, der erklärt, warum der Standort der Uhr auch bei geschlossener App oder ausgeschaltetem Bildschirm gesendet wird.

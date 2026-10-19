@@ -1,0 +1,1 @@
+Afegeix un avís clar abans de demanar la ubicació en segon pla, que explica per què s'envia la ubicació del rellotge amb l'app tancada o la pantalla apagada.

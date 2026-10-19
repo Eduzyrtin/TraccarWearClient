@@ -25,6 +25,16 @@ Paquete `com.sanabria.traccarwearosclient` · solo Wear OS · ficha en [`fastlan
 - **Ubicación en segundo plano**: formulario de declaración y **vídeo corto**: pedir «Permitir siempre», iniciar el
   seguimiento y la notificación que aparece. Justificación: enviar la posición del reloj al servidor Traccar mientras la
   pantalla está apagada y el usuario va sin el móvil.
+  - **Aviso destacado**: al pulsar «Iniciar» sin el permiso concedido, la app muestra un diálogo (`disclosure_title` /
+    `disclosure_text`, en los 9 idiomas) antes de cualquier solicitud del sistema. Vídeo ya grabado en
+    `docs/play-videos/ubicacion-segundo-plano.mp4` (súbelo a YouTube como no listado y pega el enlace).
+  - **Objetivo de la aplicación** (en inglés, ≤ 500): «Wear OS Client for Traccar sends the watch's GPS
+    position to the user's own Traccar server (an open-source GPS tracking platform), so the user can see on a map where the
+    watch is. It is meant for personal tracking of a person, pet or vehicle that carries the watch.»
+  - **Acceso a la ubicación** (en inglés, ≤ 500): «After the user taps Start, the app reads the watch location and sends it
+    to the user's Traccar server. It keeps sending when the screen is off or the app is closed, because the watch is worn
+    without the phone (for example while running or walking a dog). A foreground-service notification is shown the whole
+    time. Tracking stops when the user taps Stop. The disclosure dialog is shown before the permission request.»
 - **Servicio en primer plano de tipo ubicación**: su propia declaración, con la misma justificación y el mismo vídeo
   (guárdalo en `docs/play-videos/`, que git ignora).
 - **Exención de optimización de batería**: Play la restringe. Caso válido: app de seguimiento que debe arrancar en segundo

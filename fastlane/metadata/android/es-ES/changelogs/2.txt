@@ -1,0 +1,1 @@
+Añade un aviso claro antes de pedir la ubicación en segundo plano, que explica por qué se envía la ubicación del reloj con la app cerrada o la pantalla apagada.
