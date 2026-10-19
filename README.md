@@ -109,7 +109,7 @@ In the Traccar web app, add a **new device** (different from your phone) using t
 In the app, open *Settings › Server URL* and enter the address of the Traccar client port, usually `http://your-server:5055` or `https://your-server:5055`. Plain `http://` is allowed because many self-hosted servers use it.
 
 ### 4 · Start
-Press **Start** and grant the location permissions, including **Allow all the time**, plus *Nearby devices* and notifications. Accept the battery optimization exemption when asked (see [Battery](#battery)).
+Press **Start**, read the notice explaining why the app needs location in the background, and grant the location permissions, including **Allow all the time**, plus *Nearby devices* and notifications. Accept the battery optimization exemption when asked (see [Battery](#battery)).
 
 ## Pause near phone
 
@@ -151,6 +151,7 @@ Trade-off: Android only lets a background app start the GPS foreground service i
 - The app sends your position **only to the Traccar server you enter**. No analytics, no ads, no accounts.
 - The position itself comes from the watch's fused location provider (Google Play services), exactly as in the official app.
 - The server URL and device identifier are stored on the watch. Nothing else is kept.
+- Before asking for background location, the app shows a notice explaining that the position is sent even when the app is closed or the screen is off.
 
 ## FAQ
 
