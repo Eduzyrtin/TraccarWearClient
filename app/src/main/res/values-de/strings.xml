@@ -9,6 +9,9 @@
     <string name="status_stopped">Gestoppt</string>
     <string name="last_position">Letzte Position: %1$s</string>
 
+    <string name="disclosure_title">Standort im Hintergrund</string>
+    <string name="disclosure_text">Diese App erfasst den Standort der Uhr und sendet ihn an deinen Traccar-Server, auch wenn die App geschlossen oder der Bildschirm aus ist. Wähle auf dem nächsten Bildschirm „Immer zulassen“.</string>
+
     <string name="start">Starten</string>
     <string name="stop">Stoppen</string>
     <string name="send_now">Position jetzt senden</string>

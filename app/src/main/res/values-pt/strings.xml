@@ -9,6 +9,9 @@
     <string name="status_stopped">Parado</string>
     <string name="last_position">Última posição: %1$s</string>
 
+    <string name="disclosure_title">Localização em segundo plano</string>
+    <string name="disclosure_text">Esta app recolhe a localização do relógio e envia-a para o teu servidor Traccar, mesmo com a app fechada ou o ecrã desligado. No ecrã seguinte, escolhe «Permitir sempre».</string>
+
     <string name="start">Iniciar</string>
     <string name="stop">Parar</string>
     <string name="send_now">Enviar posição agora</string>

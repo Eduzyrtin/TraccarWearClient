@@ -9,6 +9,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -17,6 +20,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.foundation.lazy.TransformingLazyColumn
 import androidx.wear.compose.foundation.lazy.rememberTransformingLazyColumnState
+import androidx.wear.compose.material3.AlertDialog
+import androidx.wear.compose.material3.AlertDialogDefaults
 import androidx.wear.compose.material3.Button
 import androidx.wear.compose.material3.ButtonDefaults
 import androidx.wear.compose.material3.ListHeader
@@ -50,6 +55,32 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
     val bluetoothPermission = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { startTracking() }
+
+    fun begin() {
+        if (needsBluetoothPermission(context, settings) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            bluetoothPermission.launch(Manifest.permission.BLUETOOTH_CONNECT)
+        } else {
+            startTracking()
+        }
+    }
+
+    // Aviso destacado: Google Play lo exige antes de pedir la ubicación en segundo plano
+    var showDisclosure by remember { mutableStateOf(false) }
+    AlertDialog(
+        visible = showDisclosure,
+        onDismissRequest = { showDisclosure = false },
+        title = { Text(stringResource(R.string.disclosure_title)) },
+        text = { Text(stringResource(R.string.disclosure_text)) },
+        confirmButton = {
+            AlertDialogDefaults.ConfirmButton(onClick = {
+                showDisclosure = false
+                begin()
+            })
+        },
+        dismissButton = {
+            AlertDialogDefaults.DismissButton(onClick = { showDisclosure = false })
+        },
+    )
 
     val listState = rememberTransformingLazyColumnState()
     ScreenScaffold(scrollState = listState) { contentPadding ->
@@ -87,9 +118,8 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                     onClick = {
                         when {
                             settings.trackingWanted -> viewModel.setTracking(false)
-                            needsBluetoothPermission(context, settings) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ->
-                                bluetoothPermission.launch(Manifest.permission.BLUETOOTH_CONNECT)
-                            else -> startTracking()
+                            !hasPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION) -> showDisclosure = true
+                            else -> begin()
                         }
                     },
                     enabled = settings.isConfigured,

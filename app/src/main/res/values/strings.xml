@@ -10,6 +10,9 @@
     <string name="status_stopped">Stopped</string>
     <string name="last_position">Last position: %1$s</string>
 
+    <string name="disclosure_title">Location in the background</string>
+    <string name="disclosure_text">This app collects the watch\'s location and sends it to your Traccar server, even when the app is closed or the screen is off. On the next screen, choose “Allow all the time”.</string>
+
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="send_now">Send position now</string>

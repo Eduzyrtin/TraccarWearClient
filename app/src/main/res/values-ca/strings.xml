@@ -9,6 +9,9 @@
     <string name="status_stopped">Aturat</string>
     <string name="last_position">Última posició: %1$s</string>
 
+    <string name="disclosure_title">Ubicació en segon pla</string>
+    <string name="disclosure_text">Aquesta app recull la ubicació del rellotge i l\'envia al teu servidor Traccar, fins i tot amb l\'app tancada o la pantalla apagada. A la pantalla següent, tria «Permet sempre».</string>
+
     <string name="start">Inicia</string>
     <string name="stop">Atura</string>
     <string name="send_now">Envia la posició ara</string>

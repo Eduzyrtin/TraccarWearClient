@@ -9,6 +9,9 @@
     <string name="status_stopped">Detido</string>
     <string name="last_position">Última posición: %1$s</string>
 
+    <string name="disclosure_title">Localización en segundo plano</string>
+    <string name="disclosure_text">Esta app recolle a localización do reloxo e envíaa ao teu servidor Traccar, mesmo coa app pechada ou a pantalla apagada. Na seguinte pantalla, escolle «Permitir sempre».</string>
+
     <string name="start">Iniciar</string>
     <string name="stop">Deter</string>
     <string name="send_now">Enviar a posición agora</string>

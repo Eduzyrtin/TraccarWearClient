@@ -9,6 +9,9 @@
     <string name="status_stopped">Geldituta</string>
     <string name="last_position">Azken posizioa: %1$s</string>
 
+    <string name="disclosure_title">Kokapena atzeko planoan</string>
+    <string name="disclosure_text">App honek erlojuaren kokapena jasotzen du eta zure Traccar zerbitzarira bidaltzen du, baita app-a itxita dagoenean edo pantaila itzalita dagoenean ere. Hurrengo pantailan, aukeratu «Baimendu beti».</string>
+
     <string name="start">Hasi</string>
     <string name="stop">Gelditu</string>
     <string name="send_now">Bidali posizioa orain</string>

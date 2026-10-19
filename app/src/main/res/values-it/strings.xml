@@ -9,6 +9,9 @@
     <string name="status_stopped">Fermato</string>
     <string name="last_position">Ultima posizione: %1$s</string>
 
+    <string name="disclosure_title">Posizione in background</string>
+    <string name="disclosure_text">Questa app raccoglie la posizione dell\'orologio e la invia al tuo server Traccar, anche con l\'app chiusa o lo schermo spento. Nella schermata successiva scegli «Consenti sempre».</string>
+
     <string name="start">Avvia</string>
     <string name="stop">Ferma</string>
     <string name="send_now">Invia la posizione ora</string>
