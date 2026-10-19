@@ -24,9 +24,9 @@ Built on the **official Traccar Client SDK**, and it goes silent while your phon
 
 <table>
   <tr>
-    <td align="center"><img src="docs/media/client-sending.png" width="200"><br><sub>Sending your location</sub></td>
-    <td align="center"><img src="docs/media/client-settings.png" width="200"><br><sub>Server and identifier</sub></td>
-    <td align="center"><img src="docs/media/client-options.png" width="200"><br><sub>Pause near phone and stop detection</sub></td>
+    <td align="center"><img src="docs/media/shot-sending.png" width="200"><br><sub>Sending your location</sub></td>
+    <td align="center"><img src="docs/media/shot-settings.png" width="200"><br><sub>Server and identifier</sub></td>
+    <td align="center"><img src="docs/media/shot-options.png" width="200"><br><sub>Pause near phone and stop detection</sub></td>
   </tr>
 </table>
 
