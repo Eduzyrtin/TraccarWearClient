@@ -1,0 +1,39 @@
+Tracker for Traccar-ek zure Wear OS erlojuaren kokapena zure Traccar zerbitzarira bidaltzen du. Aplikazio independentea da: erlojuan dabil eta ez du ezer behar mugikorrean.
+
+NORENTZAT DA?
+Interneteko konexio propioa (LTE, 5G edo antzekoa) eta datu-plan aktiboa duten erlojuetarako, batzuetan mugikorrik gabe ateratzen diren pertsonentzat: paseo bat, korrika, bizikleta-ibilaldi bat, erlojua gainean daramazun gailu bakarra dela.
+
+Ez da zuretzat zure erlojuak mugikorrera konektatuta bakarrik funtzionatzen badu, edo mugikorra beti eramaten baduzu. Kasu horretan, erabili Traccar Client ofiziala telefonoan.
+
+PAUSATU EGITEN DA MUGIKORRA DARAMAZUN BITARTEAN
+Erlojua Bluetooth bidez mugikorrera konektatuta dagoen bitartean, isilik geratzen da eta GPSa itzalita. Mugikorrik gabe ateratzen zarenean, bere kabuz hasten da bidaltzen. Ibilbide bikoiztuak eta alferrik gastatutako bateriarik gabe. Ezarpenetan desaktiba dezakezu erlojuak beti bidaltzea nahiago baduzu.
+
+TRACCAR CLIENT-EN SDK OFIZIALEAN OINARRITUA
+Aplikazio ofizialaren jarraipen-motor bera erabiltzen du: zehaztasuna, gutxieneko distantzia, tartea, konexiorik gabeko bufferra (posizioak gorde eta konexioa dagoenean bidaltzen dira) eta geldialdien detekzioa.
+
+BATERIA AURREZTEKO PENTSATUA
+• Aplikazio ofizialaren balio lehenetsi berak: zehaztasun ertaina, 75 m eta 5 minutu.
+• Geldialdien detekzioak GPSa itzaltzen du mugitzen ez zaren bitartean.
+• Jarraipenik egiten ez duzunean, ez da ezer exekutatzen.
+
+ERLOJU BATEAN IDAZTEKO PENTSATUA
+Ez da ezer ezkutatzen, balio luzeak hainbat lerrotan banatzen dira eta testu-eremu bakoitzak Ezabatu botoia du. Euskaraz, ingelesez, gaztelaniaz, frantsesez, alemanez, italieraz, portugesez, katalanez eta galegoz.
+
+LEHEN URRATSAK
+1. Traccar-en, gehitu gailu berri bat (mugikorrarenaz bestelakoa) Ezarpenak › Gailuaren identifikatzailea atalean agertzen den identifikatzailearekin.
+2. Ezarpenak › Zerbitzariaren URLa atalean, idatzi Traccar-en bezero-atakaren helbidea, normalean http://zure-zerbitzaria:5055 edo https://zure-zerbitzaria:5055.
+3. Sakatu Hasi eta eman baimenak.
+
+BAIMENAK
+• Kokapena, "Baimendu beti" barne: zure posizioa atzeko planoan bidaltzeko.
+• Inguruko gailuak: mugikorra Bluetooth bidez konektatuta dagoen jakiteko.
+• Jakinarazpenak: jarraipena egiten duen bitartean erakusten den abisurako.
+• Bateria-optimizazioaren salbuespena: aplikazioari bere kabuz jarraipena hasten uzten dio mugikorretik urruntzen zarenean. Uko egin diezaiokezu mugikorra gertu dagoenean pausatzea erabiltzen ez baduzu.
+
+PRIBATUTASUNA
+Zure posizioa zuk adierazten duzun Traccar zerbitzarira bakarrik bidaltzen da. Analitikarik, iragarkirik eta konturik gabe. Zerbitzariaren helbidea eta identifikatzailea erlojuan gordetzen dira; ez da beste ezer gordetzen.
+
+LIBREA ETA KODE IREKIKOA
+GPLv3 lizentziapean argitaratua: https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar proiektu independentea da eta ez dago Traccar-ekin lotuta, ezta haren babesa ere. "Traccar" bere jabeen marka da.

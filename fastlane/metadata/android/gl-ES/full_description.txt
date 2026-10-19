@@ -1,0 +1,39 @@
+Tracker for Traccar envía a localización do teu reloxo Wear OS ao teu propio servidor Traccar. É unha app independente: funciona no reloxo e non precisa nada no móbil.
+
+PARA QUEN É?
+Para reloxos con conexión propia a internet (LTE, 5G ou similar) e un plan de datos activo, usados por persoas que ás veces saen sen o móbil: un paseo, unha carreira, unha ruta en bici, co reloxo como único dispositivo enriba.
+
+Non é para ti se o teu reloxo só funciona conectado ao móbil, ou se sempre levas o móbil contigo. Nese caso, usa o Traccar Client oficial no teléfono.
+
+PONSE EN PAUSA MENTRES LEVAS O MÓBIL
+Mentres o reloxo está conectado ao móbil por Bluetooth, queda en silencio e o GPS permanece apagado. Cando saes sen o móbil, comeza a enviar só. Sen rutas duplicadas e sen gastar batería de máis. Podes desactivalo en Axustes se prefires que o reloxo envíe sempre.
+
+BASEADA NO SDK OFICIAL DE TRACCAR CLIENT
+Usa o mesmo motor de seguimento ca a app oficial: precisión, distancia mínima, intervalo, búfer sen conexión (as posicións gárdanse e envíanse cando hai conexión) e detección de parada.
+
+PENSADA PARA AFORRAR BATERÍA
+• Os mesmos valores predeterminados ca a app oficial: precisión media, 75 m e 5 minutos.
+• A detección de parada apaga o GPS mentres non te moves.
+• Cando non estás a facer seguimento, non se executa nada de nada.
+
+PENSADA PARA ESCRIBIR NUN RELOXO
+Non se agocha nada, os valores longos repártense en varias liñas e cada campo de texto ten un botón Borrar. Dispoñible en galego, inglés, castelán, francés, alemán, italiano, portugués, catalán e éuscaro.
+
+PRIMEIROS PASOS
+1. En Traccar, engade un dispositivo novo (distinto ao do teu móbil) co identificador que aparece en Axustes › Identificador do dispositivo.
+2. En Axustes › URL do servidor, escribe o enderezo do porto de cliente de Traccar, normalmente http://o-teu-servidor:5055 ou https://o-teu-servidor:5055.
+3. Preme Iniciar e concede os permisos.
+
+PERMISOS
+• Localización, incluído "Permitir sempre": para enviar a túa posición en segundo plano.
+• Dispositivos próximos: para saber se o móbil está conectado por Bluetooth.
+• Notificacións: para o aviso que se amosa mentres fai o seguimento.
+• Exención da optimización da batería: permite que a app comece a facer o seguimento soa cando te afastas do móbil. Podes rexeitala se non usas a pausa co móbil preto.
+
+PRIVACIDADE
+A túa posición envíase só ao servidor Traccar que indiques. Sen analíticas, sen anuncios, sen contas. O enderezo do servidor e o identificador gárdanse no reloxo; non se conserva nada máis.
+
+LIBRE E DE CÓDIGO ABERTO
+Publicada baixo licenza GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar é un proxecto independente e non está afiliado nin avalado por Traccar. "Traccar" é unha marca dos seus respectivos propietarios.

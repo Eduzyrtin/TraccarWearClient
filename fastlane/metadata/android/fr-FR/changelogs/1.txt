@@ -1,0 +1,1 @@
+Première version. Envoie la position de votre montre à votre propre serveur Traccar, se met en pause quand votre téléphone est à proximité et est disponible en neuf langues.

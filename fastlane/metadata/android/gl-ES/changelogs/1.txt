@@ -1,0 +1,1 @@
+Primeira versión. Envía a localización do teu reloxo ao teu propio servidor Traccar, ponse en pausa mentres o móbil está preto e está dispoñible en nove idiomas.

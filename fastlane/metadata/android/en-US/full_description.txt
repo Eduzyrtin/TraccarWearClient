@@ -1,0 +1,39 @@
+Tracker for Traccar sends the location of your Wear OS watch to your own Traccar server. It is a standalone app: it runs on the watch and needs nothing on your phone.
+
+WHO IS IT FOR?
+Watches with their own internet connection (LTE, 5G or similar) and an active data plan, used by people who sometimes go out without their phone: a walk, a run, a ride, with the watch as the only device on you.
+
+It is not for you if your watch only works while connected to your phone, or if you always carry your phone. In that case, use the official Traccar Client on the phone.
+
+PAUSES WHILE YOUR PHONE IS WITH YOU
+While the watch is connected to your phone over Bluetooth it stays silent and the GPS is off. When you leave the phone behind, it starts reporting by itself. No duplicate tracks and no wasted battery. You can turn this off in Settings if you want the watch to always report.
+
+BUILT ON THE OFFICIAL TRACCAR CLIENT SDK
+It uses the same tracking engine as the official app: accuracy, minimum distance, interval, offline buffering (positions are queued and sent when there is a connection) and stop detection.
+
+MADE TO SIP BATTERY
+• Same defaults as the official app: medium accuracy, 75 m and 5 minutes.
+• Stop detection switches the GPS off while you are not moving.
+• When you are not tracking, nothing runs at all.
+
+MADE FOR TYPING ON A WATCH
+Nothing is masked, long values wrap onto several lines and every text field has a Clear button. Available in English, Spanish, French, German, Italian, Portuguese, Catalan, Basque and Galician.
+
+GETTING STARTED
+1. In Traccar, add a new device (different from your phone) using the identifier shown in Settings › Device identifier.
+2. In Settings › Server URL, enter the address of your Traccar client port, usually http://your-server:5055 or https://your-server:5055.
+3. Press Start and grant the permissions.
+
+PERMISSIONS
+• Location, including "Allow all the time": to send your position in the background.
+• Nearby devices: to know whether your phone is connected over Bluetooth.
+• Notifications: for the notification shown while tracking.
+• Battery optimization exemption: lets the app start tracking by itself when you walk away from your phone. You can decline it if you do not use Pause near phone.
+
+PRIVACY
+Your position is sent only to the Traccar server you enter. No analytics, no ads, no accounts. The server address and device identifier are stored on the watch; nothing else is kept.
+
+FREE AND OPEN SOURCE
+Released under the GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar is an independent project and is not affiliated with or endorsed by Traccar. "Traccar" is a trademark of its respective owners.

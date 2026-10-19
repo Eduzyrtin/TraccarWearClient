@@ -1,0 +1,39 @@
+Tracker for Traccar envoie la position de votre montre Wear OS à votre propre serveur Traccar. C'est une application autonome : elle fonctionne sur la montre et n'a besoin de rien sur votre téléphone.
+
+POUR QUI ?
+Pour les montres dotées de leur propre connexion internet (LTE, 5G ou similaire) et d'un forfait de données actif, utilisées par des personnes qui sortent parfois sans leur téléphone : une promenade, une course, une sortie à vélo, avec la montre comme seul appareil sur soi.
+
+Elle n'est pas faite pour vous si votre montre ne fonctionne que connectée à votre téléphone, ou si vous avez toujours votre téléphone sur vous. Dans ce cas, utilisez le Traccar Client officiel sur le téléphone.
+
+EN PAUSE QUAND VOTRE TÉLÉPHONE EST AVEC VOUS
+Tant que la montre est connectée à votre téléphone en Bluetooth, elle reste silencieuse et le GPS est éteint. Quand vous laissez le téléphone derrière vous, elle commence à envoyer sa position toute seule. Pas de trajets en double et pas de batterie gaspillée. Vous pouvez désactiver cette option dans les Réglages si vous voulez que la montre envoie toujours sa position.
+
+BASÉE SUR LE SDK OFFICIEL TRACCAR CLIENT
+Elle utilise le même moteur de suivi que l'application officielle : précision, distance minimale, intervalle, mise en mémoire tampon hors connexion (les positions sont mises en file d'attente et envoyées dès qu'une connexion est disponible) et détection d'arrêt.
+
+CONÇUE POUR ÉCONOMISER LA BATTERIE
+• Mêmes valeurs par défaut que l'application officielle : précision moyenne, 75 m et 5 minutes.
+• La détection d'arrêt éteint le GPS tant que vous ne bougez pas.
+• Quand vous ne suivez pas votre position, rien ne s'exécute.
+
+CONÇUE POUR SAISIR DU TEXTE SUR UNE MONTRE
+Rien n'est masqué, les valeurs longues passent à la ligne et chaque champ de texte a un bouton Effacer. Disponible en anglais, espagnol, français, allemand, italien, portugais, catalan, basque et galicien.
+
+POUR COMMENCER
+1. Dans Traccar, ajoutez un nouvel appareil (différent de votre téléphone) avec l'identifiant affiché dans Réglages › Identifiant de l'appareil.
+2. Dans Réglages › URL du serveur, saisissez l'adresse du port client de Traccar, en général http://votre-serveur:5055 ou https://votre-serveur:5055.
+3. Appuyez sur Démarrer et accordez les autorisations.
+
+AUTORISATIONS
+• Position, y compris « Toujours autoriser » : pour envoyer votre position en arrière-plan.
+• Appareils à proximité : pour savoir si votre téléphone est connecté en Bluetooth.
+• Notifications : pour la notification affichée pendant le suivi.
+• Exemption d'optimisation de la batterie : permet à l'application de démarrer le suivi toute seule quand vous vous éloignez du téléphone. Vous pouvez la refuser si vous n'utilisez pas la pause près du téléphone.
+
+CONFIDENTIALITÉ
+Votre position n'est envoyée qu'au serveur Traccar que vous indiquez. Pas d'analyse, pas de publicité, pas de compte. L'adresse du serveur et l'identifiant sont stockés sur la montre ; rien d'autre n'est conservé.
+
+LIBRE ET OPEN SOURCE
+Publiée sous licence GPLv3 : https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar est un projet indépendant, non affilié à Traccar et non approuvé par Traccar. « Traccar » est une marque de ses propriétaires respectifs.

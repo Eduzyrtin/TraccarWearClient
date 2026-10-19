@@ -1,0 +1,1 @@
+Erste Version. Sendet den Standort deiner Uhr an deinen eigenen Traccar-Server, pausiert, solange dein Handy in der Nähe ist, und ist in neun Sprachen verfügbar.

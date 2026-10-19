@@ -1,0 +1,1 @@
+Envía la ubicación de tu reloj Wear OS a tu propio servidor Traccar.

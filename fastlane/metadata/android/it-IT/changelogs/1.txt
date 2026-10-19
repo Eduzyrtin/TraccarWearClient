@@ -1,0 +1,1 @@
+Prima versione. Invia la posizione dell'orologio al tuo server Traccar, si mette in pausa quando il telefono è vicino ed è disponibile in nove lingue.

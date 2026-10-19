@@ -1,0 +1,39 @@
+Tracker for Traccar sendet den Standort deiner Wear-OS-Uhr an deinen eigenen Traccar-Server. Die App ist eigenständig: Sie läuft auf der Uhr und braucht nichts auf deinem Smartphone.
+
+FÜR WEN IST SIE?
+Für Uhren mit eigener Internetverbindung (LTE, 5G oder ähnlich) und aktivem Datentarif, die von Menschen genutzt werden, die manchmal ohne Smartphone unterwegs sind: ein Spaziergang, ein Lauf, eine Radtour – mit der Uhr als einzigem Gerät am Körper.
+
+Nicht geeignet ist sie, wenn deine Uhr nur in Verbindung mit dem Smartphone funktioniert oder du dein Smartphone immer dabeihast. Verwende dann den offiziellen Traccar Client auf dem Smartphone.
+
+PAUSIERT, WÄHREND DEIN SMARTPHONE BEI DIR IST
+Solange die Uhr per Bluetooth mit deinem Smartphone verbunden ist, bleibt sie still und das GPS ist aus. Lässt du das Smartphone zurück, beginnt sie von selbst zu senden. Keine doppelten Strecken und kein unnötiger Akkuverbrauch. In den Einstellungen kannst du das abschalten, wenn die Uhr immer senden soll.
+
+AUF DEM OFFIZIELLEN TRACCAR CLIENT SDK AUFGEBAUT
+Sie nutzt dieselbe Tracking-Engine wie die offizielle App: Genauigkeit, Mindestabstand, Intervall, Offline-Zwischenspeicher (Positionen werden gesammelt und gesendet, sobald eine Verbindung besteht) und Stopp-Erkennung.
+
+AKKUSCHONEND
+• Dieselben Standardwerte wie die offizielle App: mittlere Genauigkeit, 75 m und 5 Minuten.
+• Die Stopp-Erkennung schaltet das GPS aus, solange du dich nicht bewegst.
+• Wenn du nicht trackst, läuft gar nichts.
+
+FÜR DIE EINGABE AUF DER UHR GEMACHT
+Nichts wird verdeckt, lange Werte werden auf mehrere Zeilen umbrochen und jedes Textfeld hat eine Löschen-Schaltfläche. Verfügbar auf Englisch, Spanisch, Französisch, Deutsch, Italienisch, Portugiesisch, Katalanisch, Baskisch und Galicisch.
+
+SO GEHT'S
+1. Lege in Traccar ein neues Gerät an (nicht dasselbe wie dein Smartphone), mit der Kennung aus Einstellungen › Gerätekennung.
+2. Gib unter Einstellungen › Server-URL die Adresse des Traccar-Client-Ports ein, meist http://dein-server:5055 oder https://dein-server:5055.
+3. Tippe auf Starten und erteile die Berechtigungen.
+
+BERECHTIGUNGEN
+• Standort, einschließlich „Immer zulassen“: um deine Position im Hintergrund zu senden.
+• Geräte in der Nähe: um zu erkennen, ob dein Smartphone per Bluetooth verbunden ist.
+• Benachrichtigungen: für die Meldung, die während des Trackings angezeigt wird.
+• Ausnahme von der Akkuoptimierung: erlaubt der App, das Tracking selbstständig zu starten, wenn du dich vom Smartphone entfernst. Du kannst sie ablehnen, wenn du „Pause in Handynähe“ nicht nutzt.
+
+DATENSCHUTZ
+Deine Position wird nur an den Traccar-Server gesendet, den du angibst. Keine Analyse, keine Werbung, keine Konten. Serveradresse und Gerätekennung werden auf der Uhr gespeichert, sonst nichts.
+
+FREI UND OPEN SOURCE
+Veröffentlicht unter der GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar ist ein unabhängiges Projekt und steht in keiner Verbindung zu Traccar und wird von Traccar nicht unterstützt. „Traccar“ ist eine Marke der jeweiligen Inhaber.

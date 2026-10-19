@@ -1,0 +1,1 @@
+Primera versió. Envia la ubicació del teu rellotge al teu propi servidor Traccar, es posa en pausa mentre el mòbil és a prop i està disponible en nou idiomes.

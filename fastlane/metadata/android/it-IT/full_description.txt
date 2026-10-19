@@ -1,0 +1,39 @@
+Tracker for Traccar invia la posizione del tuo orologio Wear OS al tuo server Traccar. È un'app autonoma: funziona sull'orologio e non ha bisogno di nulla sul telefono.
+
+PER CHI È?
+Per orologi con una propria connessione a internet (LTE, 5G o simile) e un piano dati attivo, usati da chi a volte esce senza telefono: una passeggiata, una corsa, un giro in bici, con l'orologio come unico dispositivo addosso.
+
+Non fa per te se il tuo orologio funziona solo collegato al telefono, o se porti sempre il telefono con te. In quel caso usa il Traccar Client ufficiale sul telefono.
+
+SI METTE IN PAUSA QUANDO HAI IL TELEFONO
+Finché l'orologio è collegato al telefono via Bluetooth, resta in silenzio e il GPS rimane spento. Quando esci senza telefono, inizia a inviare da solo. Niente percorsi doppi e niente batteria sprecata. Puoi disattivarlo nelle Impostazioni se preferisci che l'orologio invii sempre.
+
+BASATA SULL'SDK UFFICIALE DI TRACCAR CLIENT
+Usa lo stesso motore di tracciamento dell'app ufficiale: precisione, distanza minima, intervallo, buffer offline (le posizioni vengono salvate e inviate quando c'è connessione) e rilevamento delle soste.
+
+PENSATA PER RISPARMIARE BATTERIA
+• Gli stessi valori predefiniti dell'app ufficiale: precisione media, 75 m e 5 minuti.
+• Il rilevamento delle soste spegne il GPS mentre non ti muovi.
+• Quando non stai tracciando, non viene eseguito proprio nulla.
+
+PENSATA PER SCRIVERE SU UN OROLOGIO
+Niente viene nascosto, i valori lunghi vanno a capo su più righe e ogni campo di testo ha un pulsante Cancella. Disponibile in italiano, inglese, spagnolo, francese, tedesco, portoghese, catalano, basco e galiziano.
+
+PER INIZIARE
+1. In Traccar, aggiungi un nuovo dispositivo (diverso da quello del telefono) con l'identificatore mostrato in Impostazioni › Identificatore del dispositivo.
+2. In Impostazioni › URL del server, scrivi l'indirizzo della porta client di Traccar, di solito http://tuo-server:5055 o https://tuo-server:5055.
+3. Tocca Avvia e concedi i permessi.
+
+PERMESSI
+• Posizione, compreso "Consenti sempre": per inviare la tua posizione in background.
+• Dispositivi nelle vicinanze: per sapere se il telefono è collegato via Bluetooth.
+• Notifiche: per l'avviso mostrato durante il tracciamento.
+• Esclusione dall'ottimizzazione della batteria: permette all'app di iniziare a tracciare da sola quando ti allontani dal telefono. Puoi rifiutarla se non usi la pausa con il telefono vicino.
+
+PRIVACY
+La tua posizione viene inviata solo al server Traccar che indichi tu. Niente analisi, niente pubblicità, niente account. L'indirizzo del server e l'identificatore restano sull'orologio; non viene conservato nient'altro.
+
+LIBERA E OPEN SOURCE
+Pubblicata con licenza GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar è un progetto indipendente e non è affiliato né approvato da Traccar. "Traccar" è un marchio dei rispettivi proprietari.

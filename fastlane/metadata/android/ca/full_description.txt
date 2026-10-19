@@ -1,0 +1,39 @@
+Tracker for Traccar envia la ubicació del teu rellotge Wear OS al teu propi servidor Traccar. És una app independent: funciona al rellotge i no necessita res al mòbil.
+
+PER A QUI ÉS?
+Per a rellotges amb connexió pròpia a internet (LTE, 5G o similar) i un pla de dades actiu, que fan servir persones que de vegades surten sense el mòbil: una passejada, una cursa, una ruta en bici, amb el rellotge com a únic dispositiu a sobre.
+
+No és per a tu si el teu rellotge només funciona connectat al mòbil, o si sempre portes el mòbil. En aquest cas, fes servir el Traccar Client oficial al telèfon.
+
+ES POSA EN PAUSA MENTRE PORTES EL MÒBIL
+Mentre el rellotge està connectat al mòbil per Bluetooth, es queda en silenci i el GPS resta apagat. Quan surts sense el mòbil, comença a enviar tot sol. Sense rutes duplicades i sense gastar bateria de més. Ho pots desactivar a Configuració si prefereixes que el rellotge enviï sempre.
+
+BASADA EN L'SDK OFICIAL DE TRACCAR CLIENT
+Fa servir el mateix motor de seguiment que l'app oficial: precisió, distància mínima, interval, memòria intermèdia sense connexió (les posicions es desen i s'envien quan hi ha connexió) i detecció d'aturada.
+
+PENSADA PER ESTALVIAR BATERIA
+• Els mateixos valors per defecte que l'app oficial: precisió mitjana, 75 m i 5 minuts.
+• La detecció d'aturada apaga el GPS mentre no et mous.
+• Quan no fas seguiment, no s'executa res de res.
+
+PENSADA PER ESCRIURE EN UN RELLOTGE
+No s'amaga res, els valors llargs es reparteixen en diverses línies i cada camp de text té un botó Esborra. Disponible en català, anglès, castellà, francès, alemany, italià, portuguès, basc i gallec.
+
+PRIMERS PASSOS
+1. A Traccar, afegeix un dispositiu nou (diferent del del mòbil) amb l'identificador que apareix a Configuració › Identificador del dispositiu.
+2. A Configuració › URL del servidor, escriu l'adreça del port de client de Traccar, normalment http://el-teu-servidor:5055 o https://el-teu-servidor:5055.
+3. Toca Inicia i concedeix els permisos.
+
+PERMISOS
+• Ubicació, inclòs "Permet sempre": per enviar la teva posició en segon pla.
+• Dispositius propers: per saber si el mòbil està connectat per Bluetooth.
+• Notificacions: per a l'avís que es mostra mentre fa el seguiment.
+• Exempció de l'optimització de bateria: permet que l'app comenci a fer el seguiment tota sola quan t'allunyes del mòbil. La pots rebutjar si no fas servir la pausa amb el mòbil a prop.
+
+PRIVADESA
+La teva posició s'envia només al servidor Traccar que indiquis. Sense analítiques, sense anuncis, sense comptes. L'adreça del servidor i l'identificador es desen al rellotge; no es conserva res més.
+
+LLIURE I DE CODI OBERT
+Publicada amb llicència GPLv3: https://github.com/Eduzyrtin/TraccarWearClient
+
+Tracker for Traccar és un projecte independent i no està afiliat ni avalat per Traccar. "Traccar" és una marca dels seus respectius propietaris.

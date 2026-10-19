@@ -1,0 +1,1 @@
+First release. Sends your watch's location to your own Traccar server, pauses while your phone is nearby and is available in nine languages.
