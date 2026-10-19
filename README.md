@@ -2,12 +2,12 @@
   TODO before going public:
   - Check the repository name in the badges and links (Eduzyrtin/TraccarWearClient).
   - Publish a first release so the "download" badge and the APK link work.
-  - Check the Play Store link (the application id is io.github.eduzyrtin.traccarwear.client) once the app is published.
+  - Check the Play Store link (the application id is com.sanabria.traccarwearosclient) once the app is published.
 -->
 
 <div align="center">
 
-# Tracker for Traccar
+# Wear OS Client for Traccar
 
 ### Your watch's location on your own Traccar server, without draining its battery.
 
@@ -37,7 +37,7 @@ Built on the **official Traccar Client SDK**, and it goes silent while your phon
 >
 > **It is not for you if** your watch only works connected to your phone, or if you always carry your phone: use the official **Traccar Client** on the phone instead. [More details](#who-is-this-app-for).
 
-> **Free here, paid on Google Play.** The APK on GitHub is completely free. If you would rather install it from the Play Store, that edition is the **paid version, as a way of donating** to the project: **[Tracker for Traccar on Google Play](https://play.google.com/store/apps/details?id=io.github.eduzyrtin.traccarwear.client)**. Same app either way.
+> **Free here, paid on Google Play.** The APK on GitHub is completely free. If you would rather install it from the Play Store, that edition is the **paid version, as a way of donating** to the project: **[Tracker for Traccar on Google Play](https://play.google.com/store/apps/details?id=com.sanabria.traccarwearosclient)**. Same app either way.
 
 </div>
 
@@ -205,7 +205,7 @@ Please open an **[issue](https://github.com/Eduzyrtin/TraccarWearClient/issues)*
 Tracker for Traccar is a passion project and the APK here is **free**. If it is useful to you:
 
 - ☕ **[Buy me a coffee on Ko-fi](https://ko-fi.com/Eduzyrtin)**
-- ▶️ Get the **[Play Store edition](https://play.google.com/store/apps/details?id=io.github.eduzyrtin.traccarwear.client)**: the same app, offered there as a **paid version in donation format**, with automatic updates.
+- ▶️ Get the **[Play Store edition](https://play.google.com/store/apps/details?id=com.sanabria.traccarwearosclient)**: the same app, offered there as a **paid version in donation format**, with automatic updates.
 - ⭐ Star the repo and tell someone who tracks their runs or rides with Traccar.
 
 Looking for the other half? **[Viewer for Traccar](https://github.com/Eduzyrtin/TraccarWearViewer)** shows your devices on a map on your wrist, with a tile per person or vehicle.

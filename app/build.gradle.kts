@@ -17,7 +17,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "io.github.eduzyrtin.traccarwear.client"
+        applicationId = "com.sanabria.traccarwearosclient"
         // Wear OS 3 o superior
         minSdk = 30
         targetSdk = 36
