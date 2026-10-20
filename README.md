@@ -10,6 +10,7 @@ Built on the **official Traccar Client SDK**, and it goes silent while your phon
 [![Wear OS 3+](https://img.shields.io/badge/Wear%20OS-3%2B-4285F4?logo=wearos&logoColor=white)](#requirements)
 [![Traccar Client SDK](https://img.shields.io/badge/Traccar%20Client%20SDK-1.1-1A237E)](https://github.com/traccar/traccar-client-sdk)
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](LICENSE)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20the%20project-FF5E5B?logo=kofi&logoColor=white)](https://ko-fi.com/Eduzyrtin)
 [![9 languages](https://img.shields.io/badge/languages-9-8E6FD8)](#features)
 [![Latest release](https://img.shields.io/github/v/release/Eduzyrtin/TraccarWearClient?color=C6F28E&label=download)](https://github.com/Eduzyrtin/TraccarWearClient/releases/latest)
 
