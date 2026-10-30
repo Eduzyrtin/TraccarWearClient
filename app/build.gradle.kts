@@ -31,6 +31,9 @@ android {
             buildConfigField("String", "TEST_DEVICE_ID", quoted("deviceId"))
         }
         release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             buildConfigField("String", "TEST_SERVER", "\"\"")
             buildConfigField("String", "TEST_DEVICE_ID", "\"\"")
         }
