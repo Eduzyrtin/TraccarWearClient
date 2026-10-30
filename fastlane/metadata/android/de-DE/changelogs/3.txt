@@ -1,0 +1,1 @@
+Passt die Bildschirme an runde Uhren an, damit keine Texte oder Schaltflächen am Rand abgeschnitten werden.

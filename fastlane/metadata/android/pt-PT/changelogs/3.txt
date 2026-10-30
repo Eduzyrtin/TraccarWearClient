@@ -1,0 +1,1 @@
+Ajusta os ecrãs ao relógio redondo para que nenhum texto ou botão fique cortado nas extremidades.

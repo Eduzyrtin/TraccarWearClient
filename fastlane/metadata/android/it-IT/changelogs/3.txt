@@ -1,0 +1,1 @@
+Adatta le schermate agli orologi rotondi, così nessun testo o pulsante viene tagliato ai bordi.

@@ -1,0 +1,1 @@
+Ajusta les pantalles al rellotge rodó perquè cap text ni botó quedi tallat a les vores.

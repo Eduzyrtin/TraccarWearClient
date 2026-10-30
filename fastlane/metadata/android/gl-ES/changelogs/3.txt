@@ -1,0 +1,1 @@
+Axusta as pantallas ao reloxo redondo para que ningún texto nin botón quede cortado nos bordos.

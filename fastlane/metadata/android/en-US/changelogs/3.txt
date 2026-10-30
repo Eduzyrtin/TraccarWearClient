@@ -1,0 +1,1 @@
+Fits the screens to round watches so no text or buttons are cut off at the edges.

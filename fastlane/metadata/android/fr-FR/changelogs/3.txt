@@ -1,0 +1,1 @@
+Adapte les écrans aux montres rondes pour qu'aucun texte ni bouton ne soit coupé sur les bords.
