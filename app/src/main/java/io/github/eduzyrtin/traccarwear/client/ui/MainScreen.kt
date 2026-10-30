@@ -9,13 +9,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -75,8 +76,8 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
     AlertDialog(
         visible = showDisclosure,
         onDismissRequest = { showDisclosure = false },
-        title = { Text(stringResource(R.string.disclosure_title)) },
-        text = { Text(stringResource(R.string.disclosure_text)) },
+        title = { Text(stringResource(R.string.disclosure_title), style = MaterialTheme.typography.titleSmall) },
+        text = { Text(stringResource(R.string.disclosure_text), style = MaterialTheme.typography.bodyExtraSmall) },
         confirmButton = {
             AlertDialogDefaults.ConfirmButton(onClick = {
                 showDisclosure = false
@@ -95,9 +96,10 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
             item {
                 Text(
                     text = statusText(settings, trackerState),
-                    style = MaterialTheme.typography.bodyMedium,
+                    maxLines = 2,
+                    style = MaterialTheme.typography.bodyExtraSmall,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth().padding(top = 6.dp).scrollTransformed(this, spec),
+                    modifier = Modifier.fillMaxWidth().height(24.dp).wrapContentHeight(Alignment.CenterVertically).scrollTransformed(this, spec),
                 )
             }
             trackerState?.lastAcceptedLocation?.let { position ->
@@ -127,7 +129,7 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                         }
                     },
                     enabled = settings.isConfigured,
-                    modifier = Modifier.fillMaxWidth().height(42.dp).transformedHeight(this, spec),
+                    modifier = Modifier.fillMaxWidth().height(40.dp).transformedHeight(this, spec),
                     transformation = SurfaceTransformation(spec),
                     contentPadding = CompactPadding,
                     label = { Text(stringResource(if (settings.trackingWanted) R.string.stop else R.string.start)) },
@@ -138,7 +140,7 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                     onClick = viewModel::sendPositionNow,
                     enabled = settings.isConfigured,
                     colors = ButtonDefaults.filledTonalButtonColors(),
-                    modifier = Modifier.fillMaxWidth().height(42.dp).transformedHeight(this, spec),
+                    modifier = Modifier.fillMaxWidth().height(40.dp).transformedHeight(this, spec),
                     transformation = SurfaceTransformation(spec),
                     contentPadding = CompactPadding,
                     label = { Text(stringResource(R.string.send_now)) },
@@ -148,7 +150,7 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                 Button(
                     onClick = onOpenSettings,
                     colors = ButtonDefaults.filledTonalButtonColors(),
-                    modifier = Modifier.fillMaxWidth().height(42.dp).transformedHeight(this, spec).minimumVerticalContentPadding(bottom = 24.dp, top = 0.dp),
+                    modifier = Modifier.fillMaxWidth().height(40.dp).transformedHeight(this, spec).minimumVerticalContentPadding(bottom = 56.dp, top = 0.dp),
                     transformation = SurfaceTransformation(spec),
                     contentPadding = CompactPadding,
                     label = { Text(stringResource(R.string.settings)) },

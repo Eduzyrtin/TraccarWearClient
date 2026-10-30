@@ -3,8 +3,8 @@ package io.github.eduzyrtin.traccarwear.client.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.input.InputTransformation
 import androidx.compose.foundation.text.input.TextFieldLineLimits
@@ -59,7 +59,8 @@ fun TextInputScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .scrollTransformed(this, spec)
-                        .background(MaterialTheme.colorScheme.surfaceContainer, RoundedCornerShape(24.dp))
+                        .background(MaterialTheme.colorScheme.surfaceContainer, MaterialTheme.shapes.large)
+                        .heightIn(min = 48.dp)
                         .padding(horizontal = 16.dp, vertical = 12.dp),
                 ) {
                     if (state.text.isEmpty()) {
@@ -91,7 +92,7 @@ fun TextInputScreen(
                 Button(
                     onClick = { state.clearText() },
                     colors = ButtonDefaults.filledTonalButtonColors(),
-                    modifier = Modifier.fillMaxWidth().transformedHeight(this, spec).minimumVerticalContentPadding(bottom = 40.dp, top = 0.dp),
+                    modifier = Modifier.fillMaxWidth().transformedHeight(this, spec).minimumVerticalContentPadding(bottom = 56.dp, top = 0.dp),
                     transformation = SurfaceTransformation(spec),
                     label = { Text(stringResource(R.string.clear)) },
                 )

@@ -58,8 +58,8 @@ fun SettingsScreen(viewModel: ClientViewModel, onEditServer: () -> Unit, onEditD
                     onCheckedChange = { checked -> viewModel.updateSettings { it.copy(pauseNearPhone = checked) } },
                     modifier = Modifier.fillMaxWidth().transformedHeight(this, spec),
                     transformation = SurfaceTransformation(spec),
-                    label = { Text(stringResource(R.string.pause_near_phone)) },
-                    secondaryLabel = { Text(stringResource(R.string.pause_near_phone_summary)) },
+                    label = { Text(stringResource(R.string.pause_near_phone), maxLines = 3) },
+                    secondaryLabel = { Text(stringResource(R.string.pause_near_phone_summary), maxLines = 4) },
                 )
             }
             item {
@@ -68,8 +68,8 @@ fun SettingsScreen(viewModel: ClientViewModel, onEditServer: () -> Unit, onEditD
                     onCheckedChange = { checked -> viewModel.updateSettings { it.copy(stopDetection = checked) } },
                     modifier = Modifier.fillMaxWidth().transformedHeight(this, spec),
                     transformation = SurfaceTransformation(spec),
-                    label = { Text(stringResource(R.string.stop_detection)) },
-                    secondaryLabel = { Text(stringResource(R.string.stop_detection_summary)) },
+                    label = { Text(stringResource(R.string.stop_detection), maxLines = 3) },
+                    secondaryLabel = { Text(stringResource(R.string.stop_detection_summary), maxLines = 4) },
                 )
             }
             item {
@@ -94,7 +94,7 @@ fun SettingsScreen(viewModel: ClientViewModel, onEditServer: () -> Unit, onEditD
                         if (settings.distanceMeters > 0) " · " + stringResource(R.string.interval_unused) else "",
                     scope = this,
                     spec = spec,
-                    modifier = Modifier.minimumVerticalContentPadding(bottom = 40.dp, top = 0.dp),
+                    modifier = Modifier.minimumVerticalContentPadding(bottom = 56.dp, top = 0.dp),
                 ) {
                     viewModel.updateSettings { it.copy(intervalSeconds = INTERVALS.next(it.intervalSeconds)) }
                 }
