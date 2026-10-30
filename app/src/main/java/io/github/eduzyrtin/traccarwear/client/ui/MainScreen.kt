@@ -6,7 +6,10 @@ import android.os.Build
 import android.text.format.DateUtils
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.foundation.lazy.TransformingLazyColumn
 import androidx.wear.compose.foundation.lazy.rememberTransformingLazyColumnState
@@ -24,9 +28,11 @@ import androidx.wear.compose.material3.AlertDialog
 import androidx.wear.compose.material3.AlertDialogDefaults
 import androidx.wear.compose.material3.Button
 import androidx.wear.compose.material3.ButtonDefaults
-import androidx.wear.compose.material3.ListHeader
 import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.compose.material3.ScreenScaffold
+import androidx.wear.compose.material3.SurfaceTransformation
+import androidx.wear.compose.material3.lazy.rememberTransformationSpec
+import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.compose.material3.Text
 import io.github.eduzyrtin.traccarwear.client.BatteryOptimization
 import io.github.eduzyrtin.traccarwear.client.ClientSettings
@@ -83,17 +89,15 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
     )
 
     val listState = rememberTransformingLazyColumnState()
+    val spec = rememberTransformationSpec()
     ScreenScaffold(scrollState = listState) { contentPadding ->
         TransformingLazyColumn(state = listState, contentPadding = contentPadding) {
             item {
-                ListHeader { Text(stringResource(R.string.app_name)) }
-            }
-            item {
                 Text(
                     text = statusText(settings, trackerState),
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.bodyMedium,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().padding(top = 6.dp).scrollTransformed(this, spec),
                 )
             }
             trackerState?.lastAcceptedLocation?.let { position ->
@@ -109,7 +113,7 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                         ),
                         style = MaterialTheme.typography.bodySmall,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier.fillMaxWidth().scrollTransformed(this, spec),
                     )
                 }
             }
@@ -123,7 +127,9 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                         }
                     },
                     enabled = settings.isConfigured,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().height(42.dp).transformedHeight(this, spec),
+                    transformation = SurfaceTransformation(spec),
+                    contentPadding = CompactPadding,
                     label = { Text(stringResource(if (settings.trackingWanted) R.string.stop else R.string.start)) },
                 )
             }
@@ -132,7 +138,9 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                     onClick = viewModel::sendPositionNow,
                     enabled = settings.isConfigured,
                     colors = ButtonDefaults.filledTonalButtonColors(),
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().height(42.dp).transformedHeight(this, spec),
+                    transformation = SurfaceTransformation(spec),
+                    contentPadding = CompactPadding,
                     label = { Text(stringResource(R.string.send_now)) },
                 )
             }
@@ -140,7 +148,9 @@ fun MainScreen(viewModel: ClientViewModel, onOpenSettings: () -> Unit) {
                 Button(
                     onClick = onOpenSettings,
                     colors = ButtonDefaults.filledTonalButtonColors(),
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().height(42.dp).transformedHeight(this, spec).minimumVerticalContentPadding(bottom = 24.dp, top = 0.dp),
+                    transformation = SurfaceTransformation(spec),
+                    contentPadding = CompactPadding,
                     label = { Text(stringResource(R.string.settings)) },
                 )
             }
@@ -164,3 +174,6 @@ private fun needsBluetoothPermission(context: Context, settings: ClientSettings)
     Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
         settings.pauseNearPhone &&
         !hasPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+
+// Botones algo más bajos para que la pantalla inicial quepa entera en un reloj redondo
+private val CompactPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp)

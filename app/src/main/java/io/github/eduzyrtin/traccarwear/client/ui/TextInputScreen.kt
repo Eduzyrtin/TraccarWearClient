@@ -25,6 +25,9 @@ import androidx.wear.compose.material3.ButtonDefaults
 import androidx.wear.compose.material3.ListHeader
 import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.compose.material3.ScreenScaffold
+import androidx.wear.compose.material3.SurfaceTransformation
+import androidx.wear.compose.material3.lazy.rememberTransformationSpec
+import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.compose.material3.Text
 import io.github.eduzyrtin.traccarwear.client.R
 
@@ -42,15 +45,20 @@ fun TextInputScreen(
 ) {
     val state = rememberTextFieldState(initialValue)
     val listState = rememberTransformingLazyColumnState()
+    val spec = rememberTransformationSpec()
     ScreenScaffold(scrollState = listState) { contentPadding ->
         TransformingLazyColumn(state = listState, contentPadding = contentPadding) {
             item {
-                ListHeader { Text(title) }
+                ListHeader(
+                    modifier = Modifier.transformedHeight(this, spec),
+                    transformation = SurfaceTransformation(spec),
+                ) { Text(title) }
             }
             item {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .scrollTransformed(this, spec)
                         .background(MaterialTheme.colorScheme.surfaceContainer, RoundedCornerShape(24.dp))
                         .padding(horizontal = 16.dp, vertical = 12.dp),
                 ) {
@@ -73,7 +81,8 @@ fun TextInputScreen(
             item {
                 Button(
                     onClick = { onSave(state.text.singleLine()) },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().transformedHeight(this, spec),
+                    transformation = SurfaceTransformation(spec),
                     label = { Text(stringResource(R.string.save)) },
                 )
             }
@@ -82,7 +91,8 @@ fun TextInputScreen(
                 Button(
                     onClick = { state.clearText() },
                     colors = ButtonDefaults.filledTonalButtonColors(),
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().transformedHeight(this, spec).minimumVerticalContentPadding(bottom = 40.dp, top = 0.dp),
+                    transformation = SurfaceTransformation(spec),
                     label = { Text(stringResource(R.string.clear)) },
                 )
             }
